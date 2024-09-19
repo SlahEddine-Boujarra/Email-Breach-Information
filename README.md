@@ -1,92 +1,84 @@
-📧 Email Breach Information Dashboard
-Overview 🛡️
-This project is a web-based dashboard that allows users to scan emails for potential breaches using the BreachDirectory API. Users can upload a list of emails in Excel or CSV format, which will be checked against breach databases. The results, including breach details, will be stored in a MongoDB database and displayed in the dashboard.
+<h1>📧 Email Breach Information Dashboard</h1>
 
-Features 🚀
-Upload Email List: Upload a CSV or Excel file containing a list of email addresses.
-Scan for Breaches: Scan emails using the BreachDirectory API to check for data breaches on the dark web.
-Save Results: Store the scan results in a MongoDB database for easy access.
-Dashboard: View the scanned results in a beautiful, interactive table within the web interface.
-Prerequisites ⚙️
-Make sure you have the following installed on your system before proceeding:
+<h2>🛡️ Overview</h2>
+<p>
+This project is a web-based dashboard that allows users to scan emails for potential breaches using the <strong>BreachDirectory API</strong>. Users can upload a list of emails in Excel or CSV format, which will be checked against breach databases. The results, including breach details, will be stored in a MongoDB database and displayed in the dashboard.
+</p>
 
-Python 3.x 🐍
-MongoDB (Ensure MongoDB is running locally or on a server) 🗄️
-BreachDirectory API Key (Sign up on RapidAPI) 🔑
-Installation Guide 🧑‍💻
-Clone the Repository 🖥️
+<h2>🚀 Features</h2>
+<ul>
+  <li><strong>Upload Email List</strong>: Upload a CSV or Excel file containing a list of email addresses.</li>
+  <li><strong>Scan for Breaches</strong>: Scan uploaded emails against breach databases via the BreachDirectory API.</li>
+  <li><strong>View Results in a Dashboard</strong>: Display breach results in an interactive table format using Dash.</li>
+  <li><strong>MongoDB Integration</strong>: Store all scan results securely in a MongoDB database.</li>
+</ul>
 
-bash
-Copy code
-git clone https://github.com/your-username/email-breach-dashboard.git
-cd email-breach-dashboard
-Create a Virtual Environment 🌐 (Optional but recommended)
+<h2>🛠️ Installation</h2>
+<p>Follow these steps to install and run the project locally.</p>
 
-bash
-Copy code
-python3 -m venv env
-source env/bin/activate  # On Windows use `env\Scripts\activate`
-Install Dependencies 📦 Install the required Python packages:
+<h3>1. Clone the Repository</h3>
+<pre><code>git clone https://github.com/your-username/email-breach-dashboard.git</code></pre>
 
-bash
-Copy code
-pip install -r requirements.txt
-Set Up MongoDB 🗄️ Ensure you have MongoDB running on your machine or set up remotely. By default, the app connects to mongodb://localhost:27017/. You can modify this in the init_mongo() function if necessary.
+<h3>2. Navigate to the Project Directory</h3>
+<pre><code>cd email-breach-dashboard</code></pre>
 
-Run the Application ▶️ After setting everything up, you can run the Dash application:
+<h3>3. Install the Required Dependencies</h3>
+<p>Ensure that you have Python installed. Then, install the required libraries using the <code>requirements.txt</code> file:</p>
+<pre><code>pip install -r requirements.txt</code></pre>
 
-bash
-Copy code
-python app.py
-The app will be available at http://127.0.0.1:8050/ by default.
+<h3>4. Run MongoDB Locally</h3>
+<p>
+Make sure you have a MongoDB instance running on your machine. The default MongoDB connection URI is <code>mongodb://localhost:27017/</code>. You can adjust this in the code if needed.
+</p>
 
-Configuration 🔧
-API Key Setup 🔑
-Before you can scan emails, you'll need to set up your BreachDirectory API key. You can get one from RapidAPI.
+<h2>💡 Usage</h2>
 
-After launching the app, enter your API key into the API Key input field and click Save API Key.
-This key will be used for all subsequent scans.
-File Upload 📂
-You can upload email lists in either Excel (.xlsx) or CSV (.csv) format. The first column of the file should contain the email addresses to be scanned.
+<h3>1. Running the Application</h3>
+<pre><code>python app.py</code></pre>
+<p>The dashboard will start running on <code>http://127.0.0.1:8050/</code>.</p>
 
-Usage 🚦
-Step-by-Step Instructions 🔄
-Enter API Key: Enter your BreachDirectory API Key into the dashboard and save it.
-Upload Email List: Drag and drop or select an email list file (.xlsx or .csv).
-Start Scan: Click on the Start Scan button to begin checking for breaches.
-View Results: Once the scan is complete, view the results in the table on the dashboard.
-MongoDB Collection Schema 📋
-Each scan result is stored in MongoDB with the following fields:
+<h3>2. Save Your API Key</h3>
+<p>Enter your <strong>BreachDirectory API Key</strong> in the provided input field and click "Save API Key".</p>
 
-Email: The email address scanned.
-Scan Date: Timestamp of when the scan was performed.
-Found: Whether a breach was found for the email.
-Breach Info: Detailed breach information (in JSON format).
-Project Structure 📂
-bash
-Copy code
-email-breach-dashboard/
-│
-├── app.py               # Main application code
-├── requirements.txt     # Python dependencies
-├── README.md            # Project documentation
-├── uploads/             # Directory for uploaded email files
-└── .gitignore           # Git ignore file
-Contributing 🤝
-Fork the repository.
-Create your feature branch (git checkout -b feature/new-feature).
-Commit your changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature/new-feature).
-Open a pull request.
-We welcome contributions to improve this project!
+<h3>3. Upload Email List</h3>
+<p>Upload an Excel or CSV file that contains a list of email addresses. The emails will be scanned for breaches.</p>
 
-License 📜
-This project is licensed under the MIT License.
+<h3>4. Start the Scan</h3>
+<p>Click the "Start Scan" button to begin the scan process. The results will be displayed in the dashboard.</p>
 
-Contact 📧
-For any questions or feedback, feel free to reach out!
+<h2>⚙️ API Integration</h2>
+<p>The app integrates with the <strong>BreachDirectory API</strong> to check for breached email addresses. The scan results are displayed in the dashboard and stored in a MongoDB database.</p>
 
-Email: your-email@example.com
-GitHub: your-username
-Let’s make the web safer, one breach scan at a time! 🔐
-This documentation will guide users through setup, usage, and contribution while making the project easily approachable for new developers.
+<h3>API Request</h3>
+<p>Each email in the uploaded list is sent to the API for a scan. The results are saved in the MongoDB collection <code>breachResults</code>.</p>
+
+<h2>📂 File Structure</h2>
+<pre><code>.
+├── app.py               # Main app logic and Dash layout
+├── requirements.txt     # Dependencies
+└── README.md            # Documentation
+</code></pre>
+
+<h2>🌟 Example Output</h2>
+<p>After scanning, the dashboard displays a table showing:</p>
+<ul>
+  <li>Email Address</li>
+  <li>Scan Date</li>
+  <li>Found Status</li>
+  <li>Breach Info</li>
+</ul>
+
+<h2>🔧 Technologies Used</h2>
+<ul>
+  <li><strong>Dash</strong>: Web framework for creating dashboards.</li>
+  <li><strong>Pandas</strong>: For handling and processing the uploaded files.</li>
+  <li><strong>MongoDB</strong>: To store scan results.</li>
+  <li><strong>BreachDirectory API</strong>: To check for breached email addresses.</li>
+</ul>
+
+<h2>📄 License</h2>
+<p>This project is licensed under the MIT License.</p>
+
+<h2>🤝 Contributions</h2>
+<p>Feel free to fork the repository, submit pull requests, or open issues for any feature requests or bugs you encounter.</p>
+
