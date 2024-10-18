@@ -17,7 +17,7 @@ This project is a web-based dashboard that allows users to scan emails for poten
 <p>Follow these steps to install and run the project locally.</p>
 
 <h3>1. Clone the Repository</h3>
-<pre><code>git clone https://github.com/your-username/email-breach-dashboard.git</code></pre>
+<pre><code>git clone https://github.com/SlahEddine-Boujarra/email-breach-dashboard.git</code></pre>
 
 <h3>2. Navigate to the Project Directory</h3>
 <pre><code>cd email-breach-dashboard</code></pre>
