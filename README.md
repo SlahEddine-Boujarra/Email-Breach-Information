@@ -54,7 +54,7 @@ Make sure you have a MongoDB instance running on your machine. The default Mongo
 
 <h2>📂 File Structure</h2>
 <pre><code>.
-├── app.py               # Main app logic and Dash layout
+├── Email_Scan.py               # Main app logic and Dash layout
 ├── requirements.txt     # Dependencies
 └── README.md            # Documentation
 </code></pre>
