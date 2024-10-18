@@ -34,7 +34,7 @@ Make sure you have a MongoDB instance running on your machine. The default Mongo
 <h2>💡 Usage</h2>
 
 <h3>1. Running the Application</h3>
-<pre><code>python app.py</code></pre>
+<pre><code>python Email_Scan.py</code></pre>
 <p>The dashboard will start running on <code>http://127.0.0.1:8050/</code>.</p>
 
 <h3>2. Save Your API Key</h3>
